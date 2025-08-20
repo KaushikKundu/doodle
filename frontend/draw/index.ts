@@ -1,5 +1,5 @@
 import { ShapeName } from "@/app/home/page";
-type Shape =
+export type Shape =
     | {
           type: ShapeName.Rectangle;
           x: number;
@@ -26,6 +26,7 @@ type Shape =
           y: number;
       };
 let existingShapes: Shape[] = [];
+
 
 export function initDraw(
     canvas: HTMLCanvasElement,
@@ -124,6 +125,7 @@ export function initDraw(
                 type: ShapeName.Line,
             });
         }
+        storeToDb(existingShapes);
         clearCanvas(canvas, existingShapes, ctx);
     };
     canvas.addEventListener("mousedown", mousedownHandler);
