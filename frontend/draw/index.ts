@@ -1,5 +1,4 @@
 import { ShapeName } from "@/app/home/page";
-import { shouldPublishLog } from "better-auth";
 type Shape =
     | {
           type: ShapeName.Rectangle;

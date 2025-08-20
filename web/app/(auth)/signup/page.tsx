@@ -95,30 +95,8 @@ export default function SignUp() {
 							type="submit"
 							className="w-full"
 							disabled={loading}
-							onClick={async () => {
-								await signUp.email({
-									email,
-									password,
-									name: `${firstName} ${lastName}`,
-									
-									callbackURL: "/home",
-									fetchOptions: {
-										onResponse: () => {
-											setLoading(false);
-										},
-										onRequest: () => {
-											setLoading(true);
-										},
-										onError: (ctx) => {
-											toast.error(ctx.error.message);
-										},
-										onSuccess: async () => {
-											router.push("/home");
-										},
-									},
-								});
-								console.log("password:"+password); 
-							}}
+							onClick={}
+								
 						>
 							{loading ? (
 								<Loader2 size={16} className="animate-spin" />
