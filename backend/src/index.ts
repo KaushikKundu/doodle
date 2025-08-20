@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import connectdb from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
+import { clerkClient, clerkMiddleware, getAuth, requireAuth } from "@clerk/express";
 
 dotenv.config();
 
@@ -11,13 +12,19 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+app.use(clerkMiddleware())
 app.use(express.urlencoded({ extended: true }));
 
 //routes 
-app.use("/api/auth", authRoutes);
-app.get("/api", (req, res) => {
-    res.send("Hello world!");
+app.use("/api/canvas", requireAuth(), async (req, res) => {
+    const { userId } = getAuth(req);
+    if (!userId) {
+        return res.status(401).json({ error: "Unauthorized: userId not found" });
+    }
+    const user = await clerkClient.users.getUser(userId);
+    res.json({ user });
 });
+
 
 const startServer = async () => {
     try {
