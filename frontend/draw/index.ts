@@ -1,4 +1,9 @@
-import { ShapeName } from "@/app/home/page";
+export const enum ShapeName {
+  Circle,
+  Rectangle,
+  Line,
+  Eraser
+}
 export type Shape =
     | {
           type: ShapeName.Rectangle;

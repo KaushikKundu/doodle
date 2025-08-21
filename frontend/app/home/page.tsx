@@ -2,14 +2,9 @@
 import { initDraw } from "@/draw/index";
 import { useEffect, useRef, useState } from "react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { ArrowRight, Circle, Eraser, EraserIcon, Square } from "lucide-react";
+import { ArrowRight, Circle, Eraser, Square } from "lucide-react";
 
-export const enum ShapeName {
-  Circle,
-  Rectangle,
-  Line,
-  Eraser
-}
+import { ShapeName } from "@/draw/index";
 function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });

@@ -191,7 +191,7 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-slate-600 mb-4">
-                  "Doodlec has transformed how our remote team collaborates. The real-time features are incredible!"
+                  "Doodle has transformed how our remote team collaborates. The real-time features are incredible!"
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full flex items-center justify-center text-white font-semibold mr-3">
