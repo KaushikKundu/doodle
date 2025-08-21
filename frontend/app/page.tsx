@@ -22,10 +22,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
-              <Palette className="w-5 h-5 text-white" />
-            </div>
+            <div className="flex items-center space-x-2">         
             <span className="text-xl font-bold text-slate-900"> Doodle</span>
             </div>
 
@@ -37,10 +34,7 @@ export default function Home() {
               
               </div>
               <div className="flex items-center space-x-4">
-                <Button variant="ghost" onClick={() => router.push('/signin')}>
-                  Sign in
-                </Button>
-                <Button className="bg-gradient-to-r from-green-400 to-green-600 hover:from-green-700 hover:to-green-800" onClick={() => router.push('/signup')}>
+                <Button className="bg-gradient-to-r from-green-400 to-green-600 hover:from-green-700 hover:to-green-800" onClick={() => router.push('/home')}>
                   Get Started for Free
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
