@@ -125,7 +125,6 @@ export function initDraw(
                 type: ShapeName.Line,
             });
         }
-        storeToDb(existingShapes);
         clearCanvas(canvas, existingShapes, ctx);
     };
     canvas.addEventListener("mousedown", mousedownHandler);

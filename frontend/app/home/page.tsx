@@ -3,7 +3,6 @@ import { initDraw } from "@/draw/index";
 import { useEffect, useRef, useState } from "react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { ArrowRight, Circle, Eraser, EraserIcon, Square } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export const enum ShapeName {
   Circle,
@@ -34,8 +33,7 @@ function Home() {
   }, [])
   return (
     <div className="bg-green-100">
-      <nav className="flex justify-between items-center p-2">
-        <span className="text-xl font-bold text-slate-900 ml-8">Doodle</span>
+      <nav className="flex justify-center  items-center p-2">
         <div className=" z-50 bg-white p-2 rounded-xl border shadow flex">
           <ToggleGroup type="single">
             <ToggleGroupItem value="rectangle" onClick={() => setCurShape(ShapeName.Rectangle)}><Square /> </ToggleGroupItem>
@@ -44,7 +42,7 @@ function Home() {
             <ToggleGroupItem value="eraser" onClick={() => setCurShape(ShapeName.Eraser)}><Eraser /></ToggleGroupItem>
           </ToggleGroup>
         </div>
-        <Button variant="default" className="mr-4">Share</Button>
+        
       </nav>
       <canvas ref={canvasRef} width={canvasSize.width} height={canvasSize.height} ></canvas>
     </div>
